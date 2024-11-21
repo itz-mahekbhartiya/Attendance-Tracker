@@ -1,0 +1,23 @@
+[
+    {
+        "FullName": "Mahek Rajesh Bhartiya",
+        "EmpId": "EMP101011",
+        "Gender": "Male",
+        "Password": "12345678",
+        "Address": "Pune, India"
+    },
+    {
+        "FullName": "Sumit Shatrughan Shedage",
+        "EmpId": "EMP101010",
+        "Gender": "Male",
+        "Password": "12345678",
+        "Address": "Pune, India"
+    },
+    {
+        "FullName": "Aditya Atul Kulkarni",
+        "EmpId": "EMP010101",
+        "Gender": "Male",
+        "Password": "12345678",
+        "Address": "Pune, India"
+    }
+]
