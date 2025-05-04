@@ -17,7 +17,7 @@ connectDB(process.env.DB_URL);
 console.log(`Database connected successfully at ${process.env.DB_URL}`);
 
 // Middleware
-app.use(cors({ origin: 'http://localhost:3000', credentials: true })); // Enable CORS for localhost:3000
+app.use(cors({ origin: 'https://your-frontend.onrender.com', credentials: true })); // Enable CORS for localhost:3000
 app.use(express.json());  // For parsing JSON data
 app.use(express.urlencoded({ extended: true }));  // For parsing URL-encoded data
 app.use(bodyParser.json());
