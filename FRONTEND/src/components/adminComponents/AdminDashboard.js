@@ -14,7 +14,7 @@ export default function AdminDashboard() {
         async function fetchEmployees() {
             try {
                 console.log("Request send")
-                const response = await axios.get('https://your-backend.onrender.com/employees');
+                const response = await axios.get('https://attendance-tracker-backend-5x8m.onrender.com/employees');
                 if (response.data.success) {
                     console.log("Response success", response.data.data);
                     setEmployees(response.data.data);
@@ -29,7 +29,7 @@ export default function AdminDashboard() {
     async function fetchAttendanceHistory(empId) {
         try {
             console.log(empId);
-            const response = await axios.get(`https://attendance-tracker-backend-m4fu.onrender.com/${empId}/attendance`, {
+            const response = await axios.get(`https://attendance-tracker-backend-5x8m.onrender.com/${empId}/attendance`, {
                 params: {
                     date: searchDate,
                     status: filterStatus,

@@ -15,7 +15,7 @@ export default function UserAttendance({User_Id}) {
         async function fetchAttendanceHistory(empId) {
             try {
                 console.log(empId);
-                const response = await axios.get(`https://attendance-tracker-backend-m4fu.onrender.com/${empId}/attendance`, {}, { withCredentials: true });
+                const response = await axios.get(`https://attendance-tracker-backend-5x8m.onrender.com/${empId}/attendance`, {}, { withCredentials: true });
                 if (response.data.success) {
                     setAttendanceHistory(response.data.data);
                 } else {
