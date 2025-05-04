@@ -29,7 +29,7 @@ export default function AdminDashboard() {
     async function fetchAttendanceHistory(empId) {
         try {
             console.log(empId);
-            const response = await axios.get(`https://your-backend.onrender.com/employee/${empId}/attendance`, {
+            const response = await axios.get(`https://attendance-tracker-backend-m4fu.onrender.com/${empId}/attendance`, {
                 params: {
                     date: searchDate,
                     status: filterStatus,

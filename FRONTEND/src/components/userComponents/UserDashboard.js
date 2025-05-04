@@ -31,7 +31,7 @@ export default function UserDashboard() {
 
     async function checkIn() {
         try {
-            const response = await axios.post(`https://your-backend.onrender.com/checkIn`, {}, { withCredentials: true });
+            const response = await axios.post(`https://attendance-tracker-backend-m4fu.onrender.com/checkIn`, {}, { withCredentials: true });
             
             if (response.data.success) {
                 setCheckedIn(true);
@@ -71,7 +71,7 @@ export default function UserDashboard() {
 
     async function checkOut() {
         try {
-            const response = await axios.post(`https://your-backend.onrender.com/checkOut`, {}, { withCredentials: true });
+            const response = await axios.post(`https://attendance-tracker-backend-m4fu.onrender.com/checkOut`, {}, { withCredentials: true });
             if (response.data.success) {
                 setCheckedOut(true);
                 // Convert the UTC date string to a JavaScript Date object
