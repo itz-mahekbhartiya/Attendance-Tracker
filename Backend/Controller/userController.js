@@ -4,6 +4,7 @@ const { Employee, Attendance } = require('../Model/Employee');
 
 async function checkIn(req, res) {
     try {
+        console.log("CheckIn Cookies:", req.cookies);
         const token = req.cookies.token;
         if (!token) return res.status(401).json({ success: false, message: 'No token provided' });
 
