@@ -11,7 +11,7 @@ const Router = require('./Routes/Router');
 
 // Initialize the server
 const app = express();
-
+const PORT = process.env.PORT || 8000;
 // Database Connection
 connectDB(process.env.DB_URL);
 console.log(`Database connected successfully at ${process.env.DB_URL}`);
@@ -27,6 +27,6 @@ app.use(cookieParser()); // Use cookie-parser
 app.use(Router); // Use the router for handling routes
 
 // Start the server
-app.listen(process.env.PORT || 8000, ()=>{
+app.listen(PORT, ()=>{
     console.log(`Server is running on http://localhost:${process.env.PORT}`);
 })
