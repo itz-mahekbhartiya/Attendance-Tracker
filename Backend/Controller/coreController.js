@@ -17,7 +17,7 @@ async function loginEmployee(req, res) {
         const cookies = res.cookie('token', token, {
             httpOnly: true,
             secure: false,
-            sameSite: 'lax',
+            sameSite: 'None',
             maxAge: 60 * 60 * 1000
         });
         console.log("Cookies :",cookies);
