@@ -5,6 +5,7 @@ const {Admin} = require('../Model/Admin');
 
 async function loginEmployee(req, res) {
     const { EmpId, Password } = req.body;
+    console.log(EmpId, Password);
     try {
         const user = await Employee.findOne({ EmpId });
         if (!user) return res.status(400).json({ message: 'User not found' });
@@ -13,13 +14,13 @@ async function loginEmployee(req, res) {
 
         const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET, { expiresIn: '1h' });
 
-        res.cookie('token', token, {
+        const cookies = res.cookie('token', token, {
             httpOnly: true,
-            secure: false,
+            secure: true,
             sameSite: 'lax',
             maxAge: 60 * 60 * 1000
         });
-
+        console.log("Cookies :",cookies);
         return res.status(200).json({ success: true, user_id: user._id, message: 'Logged in successfully' });
     } catch (error) {
         return res.status(500).json({ message: 'Login failed', error: error.message });

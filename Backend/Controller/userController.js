@@ -4,9 +4,13 @@ const { Employee, Attendance } = require('../Model/Employee'); // Assuming model
 async function checkIn(req, res) {
     const empId = req.cookies.EmpId;
     try {
+        console.log("CheckIn EmpId:", empId);
+        console.log("CheckIn Cookies:", req.cookies);
         // Find the employee by EmpId
         const employee = await Employee.findOne({ EmpId: empId });
         if (!employee) {
+            console.log('Employee not found:', empId);
+            console.log('Employee not found:', employee);
             return res.status(404).json({ success: false, message: 'Employee not found' });
         }
 
