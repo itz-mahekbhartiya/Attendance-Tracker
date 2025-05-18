@@ -26,10 +26,10 @@ export default function AdminDashboard() {
         fetchEmployees();
     }, []);
 
-    async function fetchAttendanceHistory(empId) {
+    async function fetchAttendanceHistory(token) {
         try {
-            console.log(empId);
-            const response = await axios.get(`https://attendance-tracker-backend-5x8m.onrender.com/${empId}/attendance`, {
+            console.log(token);
+            const response = await axios.get(`https://attendance-tracker-backend-5x8m.onrender.com/${token}/attendance`, {
                 params: {
                     date: searchDate,
                     status: filterStatus,

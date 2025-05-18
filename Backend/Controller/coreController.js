@@ -5,7 +5,7 @@ const {Admin} = require('../Model/Admin');
 
 async function loginEmployee(req, res) {
     const { EmpId, Password } = req.body;
-    console.log(EmpId, Password);
+    console.log("Employee logined : ",EmpId, Password);
     try {
         const user = await Employee.findOne({ EmpId });
         if (!user) return res.status(400).json({ message: 'User not found' });
@@ -29,7 +29,7 @@ async function loginEmployee(req, res) {
 
 async function loginAdmin(req, res) {
     const { EmpId, Password } = req.body;
-    console.log(req.body);
+    console.log("Admin logined : ",EmpId, Password);
     try {
         const user = await Admin.findOne({ EmpId });
         if (!user) return res.status(400).json({ message: 'User not found' });
@@ -42,9 +42,9 @@ async function loginAdmin(req, res) {
 
         // Set token in cookies
         const cokkies = res.cookie('token', token, {
-            httpOnly: false,
-            secure: false, // Set to true only in production
-            sameSite: 'lax', // Allow cookies on cross-origin
+            httpOnly: true,
+            secure: true, // Set to true only in production
+            sameSite: 'None', // Allow cookies on cross-origin
             maxAge: 60 * 60 * 1000 // 1 hour
         });
 
