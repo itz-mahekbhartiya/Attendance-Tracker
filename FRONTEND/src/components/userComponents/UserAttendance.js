@@ -25,7 +25,7 @@ export default function UserAttendance({User_Id}) {
                 console.error('Error fetching attendance history:', error);
             }
         }
-        fetchAttendanceHistory(empId);
+        fetchAttendanceHistory(token);
     }, []);
 
 

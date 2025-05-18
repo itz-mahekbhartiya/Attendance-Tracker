@@ -9,5 +9,5 @@ Router.post('/loginAdmin', loginAdmin);
 Router.post('/checkIn', checkIn)
 Router.post('/checkOut', checkOut)
 Router.get('/employees',getEmployees)
-Router.get('/employee/:id/attendance', getEmployeeById);
+Router.get('/:id/attendance', getEmployeeById);
 module.exports = Router;
