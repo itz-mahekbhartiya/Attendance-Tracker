@@ -10,11 +10,11 @@ export default function UserAttendance({User_Id}) {
 
     // Fetch employees on component mount
     useEffect(() => {
-        const empId = Cookies.get('token');  // Fetches the user_id cookie value
-        console.log("token" ,token);
+        const token = Cookies.get('token');  // Fetches the user_id cookie value
+        console.log("token",token);
         async function fetchAttendanceHistory(token) {
             try {
-                console.log(empId);
+                console.log(token);
                 const response = await axios.get(`https://attendance-tracker-backend-5x8m.onrender.com/${token}/attendance`, {}, { withCredentials: true });
                 if (response.data.success) {
                     setAttendanceHistory(response.data.data);
